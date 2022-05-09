@@ -29,12 +29,12 @@ public class FirstServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     
-    //¼­ºí¸´ : ¼­¹ö¿¡¼­ ½ÇÇàµÇ´Â ÀÚ¹Ù ÇÁ·Î±×·¥ : JAVA + HTML
+    //ì„œë¸”ë¦¿ : ì„œë²„ì—ì„œ ì‹¤í–‰ë˜ëŠ” ìë°” í”„ë¡œê·¸ë¨ : JAVA + HTML
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=utf-8");
 		
-		response.getWriter().append("<h1>Served at: ").append(request.getContextPath() + "<h1/>").append("<h2>È«ÀÚ¿µ</h2>");
+		response.getWriter().append("<h1>Served at: ").append(request.getContextPath() + "<h1/>").append("<h2>È«ï¿½Ú¿ï¿½</h2>");
 	}
 
 	/**
