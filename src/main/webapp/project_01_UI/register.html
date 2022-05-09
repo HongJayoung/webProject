@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>REGISTER</title>
+<style>
+	form {width: 400px;}
+</style>
+<script>
+	function f() {
+		var pw1 = document.getElementById("pw1").value;
+		var pw2 = document.getElementById("pw2").value;
+
+		
+		if(pw1 != pw2) {
+			alert("비밀번호 확인하세요.");
+			document.getElementById("pw1").focus();
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<form action="" onsubmit="f();" method="post">
+<fieldset>
+<legend>REGISTER</legend>
+	아이디 <input type="text" id="id" name="id" required="required" autofocus="autofocus"> <br>
+	비밀번호 <input type="password" id="pw1" name="pw1" required="required"> <br>
+	비밀번호 확인 <input type="password" id="pw2" name="pw2" required="required"> <br>
+	이름 <input type="text" id="name" name="name" required="required"> <br>
+	연락처 <input type="tel" id="phone" name="phone" required="required" placeholder="하이픈(-)제외 11자리 입력" pattern="[01]{3}[0-9]{8}"> <br>
+	<input type="submit" value="회원가입"> <input type="reset" value="초기화">
+</fieldset>
+</form>
+</body>
+</html>

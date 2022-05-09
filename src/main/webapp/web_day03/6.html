@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img {
+	/* display: block; */
+	width:250px;
+	height:250px;}
+/*width는 inline요소에서 수정불가. img는 속성중에 width가 있기 떄문에 수정가능*/
+a {
+	width:100px;
+	border:1px solid gray;
+	display : inline-block;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;}
+/*inline-block: inline요소의 특징을 갖고 block*/
+a:hover {
+	background-color: navy;
+	color:white;}
+h1 {
+	display:none; /*공간차지X*/
+	visibility: hidden; /*공간을 차지하고 보이지않음*/}
+</style>
+</head>
+<body>
+<h1>block요소와 inline요소</h1>
+<img alt="" src="../images/muffin.svg">
+<img alt="" src="../images/gugudan.jpg">
+<img alt="" src="../images/automobile.svg">
+
+<a href="1.html">HTML문서1</a>
+<a href="2.html">HTML문서2</a>
+<a href="3.html">HTML문서3</a>
+<a href="4.html">HTML문서4</a>
+<a href="5.html">HTML문서5</a>
+</body>
+</html>

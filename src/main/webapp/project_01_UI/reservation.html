@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RESERVATION</title>
+<style>
+	form {width: 400px;}
+</style>
+</head>
+<body>
+<form action="" onsubmit="f();" method="post">
+<fieldset>
+<legend>NEW RESERVATION</legend>
+	좌석번호 
+	<select name="seat_type">
+		<optgroup label="study room">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</optgroup>
+		<optgroup label="labtop room">
+			<option>11</option>
+			<option>12</option>
+			<option>13</option>
+			<option>14</option>
+			<option>15</option>
+		</optgroup>
+		<optgroup label="conference room">
+			<option>21</option>
+			<option>22</option>
+			<option>23</option>
+			<option>24</option>
+			<option>25</option>
+		</optgroup>
+	</select> <br>
+	<!-- 좌석번호 <input type="text" id="id" name="id" required="required" autofocus="autofocus"> <br> -->
+	사용일자 <input type="date" id="sdate" name="sdate" required="required">
+	 ~ <input type="date" id="edate" name="edate" required="required"> <br>
+	<input type="submit" value="예약하기"> <input type="reset" value="초기화">
+</fieldset>
+</form>
+</body>
+</html>
