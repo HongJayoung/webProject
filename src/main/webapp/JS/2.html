@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//JavaScript변수...var을 붙이면 지역번수, var이 없으면 전역변수
+var a=10; //함수내의 변수가 아니므로 전역변수
+b=20;
+
+function call() {
+	var c=30; //지역변수
+	d=40; //전역변수
+	alert(a+b+c+d);
+}
+
+function call2() {
+	//c is not defined(선언된 변수가 없다.)
+	//alert(a+b+c+d);
+	d="자바";
+	alert(a+b+d);
+}
+function call3() {
+	alert(d);
+}
+function call4() {
+	//JavaScript의 타입은 6가지
+	//number, string, boolean, object, function, undefined
+	
+	var v1; //undefined(선언은 되었지만 값은 없음)
+	document.getElementById("here").innerHTML = "<p>"+v1+" => "+typeof(v1)+"</p>";
+	v1= 10; //number
+	document.getElementById("here").innerHTML += "<p>"+v1+" => "+typeof(v1)+"</p>";
+	v1 = 3.14; //number
+	document.getElementById("here").innerHTML += "<p>"+v1+" => "+typeof(v1)+"</p>";
+	v1 = 10>20; //boolean
+	document.getElementById("here").innerHTML += "<p>"+v1+" => "+typeof(v1)+"</p>";
+	v1 = "자바"; //string
+	document.getElementById("here").innerHTML += "<p>"+v1+" => "+typeof(v1)+"</p>";
+	v1 = [1,2,3,4,5]; //object
+	document.getElementById("here").innerHTML += "<p>"+v1+" => "+typeof(v1)+"</p>";
+	v1 = {name:'jj', "phone":"010-1111-2222"}; //object
+	document.getElementById("here").innerHTML += "<p>"+v1['name']+" => "+typeof(v1)+"</p>";
+	v1 = function(){a=10;}; //function
+	document.getElementById("here").innerHTML += "<p>"+v1+" => "+typeof(v1)+"</p>";
+	
+	document.getElementsByClassName("my")[0].innerHTML += "<h2>class이름으로 접근하기</h2>";
+	document.getElementsByName("myname")[0].innerHTML += "<h2>name으로 접근하기</h2>";
+	
+	//ECMAScript6에서 추가
+	document.querySelector("#here").innerHTML += "<h2>querySelector로 #id 접근하기</h2>";
+	document.querySelector(".my").innerHTML += "<h2>querySelector로 .class 접근하기</h2>";
+	document.querySelector("div[name='myname']").innerHTML += "<h2>querySelector로 속성 접근하기</h2>";
+}
+</script>
+</head>
+<body>
+<h1>JavaScript변수</h1>
+<hr>
+<button onclick="call();">버튼1</button>
+<button onclick="call2();">버튼2</button>
+<button onclick="call3();">버튼3</button>
+<button onclick="call4();">버튼4</button>
+<button id="btn5">버튼5</button>
+<div id="here" class="my" name="myname">여기</div>
+
+<script>
+	document.querySelector("#btn5").onmouseenter = function() {
+		document.querySelector("#here").innerHTML += "<h2>aaaaaaaa</h2>";
+	}
+	document.querySelector("#btn5").onmouseleave = function() {
+		document.querySelector("#here").innerHTML += "<h2>bbbbbbbbb</h2>";
+	}
+</script>
+</body>
+</html>

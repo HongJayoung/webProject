@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+HTML : 구조적 data(계층구조를 갖는 웹데이터)
+css : display담당(모양)
+JavaScript : 동작담당(사용자의 행위에 의해 문서가 달라지도록한다.)
+	head, body 모두 가능
+	일반적으로 head 
+	시간이 소요되는 작업은 body 아래부분에 작성
+ -->
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="common.css" rel="stylesheet" type="text/css">
+
+<style>
+/* internal css */
+h1 {background-color: orange;}
+#here {border:1px solid blue;}
+</style>
+
+<script type="text/javascript">
+	alert("1.Head에 작성");
+	console.log("1.Head에 작성");
+</script>
+
+<script type="text/javascript">
+	alert("2.Head에 작성");
+	console.log("2.Head에 작성");
+	/* 수행하는데 시간이 오래걸리지않으면 head에 권장 */
+	function call(){
+		document.getElementById("here").innerHTML += "<h1>KOSTA2</h1>";
+	}
+</script>
+
+<script src="external.js"></script>
+
+<script>
+	f1();
+	f2();
+</script>
+</head>
+
+<body onload="call();">
+<script type="text/javascript">
+	alert("3.Body 시작에 작성...권장아님");
+	console.log("3.Body 시작에 작성...권장아님");
+</script>
+
+<h1>JAVAScript의 표준은 ECMAscript이다.</h1>
+<button onclick="alert('버튼누름')">버튼</button>
+<div id="here">여기</div>
+
+<script type="text/javascript">
+	/* 수행하는데 시간이 오래걸리면 body끝에 권장 */
+	alert("4.Body 끝에 작성");
+	console.log("4.Body 끝에 작성");
+	document.getElementById("here").innerHTML += "<h1>KOSTA1</h1>";
+</script>
+</body>
+</html>
