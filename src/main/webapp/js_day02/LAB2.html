@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>LAB2</h1>
+<div id="inputimage">이미지</div>
+<form>
+	<input type="button" value="내사진1" onclick="check(1);" >
+	<input type="button" value="내사진2" onclick="check(2);">
+</form>
+
+<script>
+function check(param) {
+	var str="";
+	if(param==1) {
+		str="<img src='../images/gugudan.jpg' width=300 height=400>";
+	}else if(param==2) {
+		str="<img src='../images/cover.jpg' width=300 height=400>";
+	}
+	
+	inputimage.innerHTML = str;
+}
+</script>
+</body>
+</html>
