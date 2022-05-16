@@ -11,9 +11,16 @@ function focusChange(obj) {
 
 //첫번째자리가 1,3이면 남자, 2,4이면 여자
 function genderCheck(jumin2, obj) {
+	/*
+	//별로 추천하지않는 방법
+	colsole.dir(obj);
+	console.log(obj.childNodes[1].childNodes[7].value);
+	console.log(obj.jumin2.value);
+	*/
+	
 	if(jumin2.length != 7) {
 		alert("7자리 입력필수!");
-		//document.querySelector("#jumin2").focus(); //왜 그러니,,,
+		document.querySelector("#jumin2").focus(); //왜 그러니,,,
 		return;
 	}
 	
@@ -37,6 +44,7 @@ function check() {
     <legend>개인정보</legend>
      <label for="jumin1">주민번호</label>
      <input type="text" name="jumin1" id="jumin1" size="6"  maxlength="6" onkeyup="focusChange(this);">
+     <!-- onblur : input에서 focus가 떠났을때 -->
      <input type="text" name="jumin2" id="jumin2" size="7" maxlength="7" onblur="genderCheck( this.value , form )">
      
      <br><br>
