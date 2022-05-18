@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js_lib/jquery-3.6.0.min.js"></script>
+<script>
+	var obj = {"background-color":"navy","color":"orange"};
+	
+	$(function() {
+		//버튼의 이벤트에 리스너를 연결
+		$("#btn1").on("click", f1);
+		$("#btn2").on("click", f2);
+		$("#btn3").on("click", f3);
+		$("#btn4").on("click", f4);
+		$("#btn5").on("click", f5);
+		$("#btn6").on("click", f6);
+		$("#btn7").on("click", f7);
+		$("#btn8").on("click", f8);
+	});
+	
+	function f1() {
+		var a = $("img").first().attr("src");
+		//var a = document.querySelector("img").src;
+		//var a = document.getElementsByTagName("img")[0].src;
+		
+		$("#here").html(a);
+	}
+	
+	function f2() {
+		$("img").first().attr("src","../images/gugudan.jpg");
+	}
+	
+	function f3() {
+		$("img").attr("src",function(index) {
+			if(index==0) return "../images/gugudan-2.jpg";
+			return "../images/automobile.svg";
+		});
+		
+		$("img").attr("width", function(index) {
+			return (index+1)*200;
+		});
+	}
+	
+	function f4() {
+		var obj2 = {};
+		
+		obj2.src = function(index) {
+						if(index==0) return "../images/gugudan-2.jpg";
+						return "../images/automobile.svg";
+					};
+		obj2.width = function(index) {
+						return (index+1)*200;
+					};
+		
+		$("img").attr(obj2);
+	}
+	
+	function f5() {
+		$('img').removeAttr("src");
+	}
+	
+	function f6() {
+		$("#here").remove(); //tag 자체 지우기
+	}
+	
+	function f7() {
+		$("#here").empty(); //내용만 지우기
+	}
+	
+	function f8() {
+		$("<h1></h1>").text("Hello!_append").appendTo("#here"); //here안에
+		$("<h1></h1>").text("Hello!_prepend").prependTo("#here"); //here안에
+		$("<h1></h1>").text("Hello!_before").insertBefore("#here"); //here밖에
+		$("<h1></h1>").text("Hello!_after").insertAfter("#here"); //here밖에
+		$("<img>").attr({"src":"../images/bottom-bg.jpg","width":300}).appendTo("#here");
+	}
+</script>
+
+<style>
+#here {
+	border:1px solid gray;
+}
+</style>
+</head>
+
+<body>
+<button id="btn1">속석얻기</button>
+<button id="btn2">속성변경</button>
+<button id="btn3">속성변경(함수)</button>
+<button id="btn4">속성변경(object)</button>
+<button id="btn5">속성제거</button>
+<button id="btn6">객체remove</button>
+<button id="btn7">empty</button>
+<button id="btn8">객체생성</button>
+
+<hr>
+<div id="here">여기!</div>
+<img alt="muffin" src="../images/muffin.svg">
+<img alt="bg3" src="../images/bg3.jpg">
+</body>
+</html>
