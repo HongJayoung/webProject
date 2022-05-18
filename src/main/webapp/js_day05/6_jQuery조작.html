@@ -69,10 +69,10 @@
 	}
 	
 	function f8() {
-		$("<h1></h1>").text("Hello!_append").appendTo("#here"); //here안에
-		$("<h1></h1>").text("Hello!_prepend").prependTo("#here"); //here안에
-		$("<h1></h1>").text("Hello!_before").insertBefore("#here"); //here밖에
-		$("<h1></h1>").text("Hello!_after").insertAfter("#here"); //here밖에
+		$("<h1></h1>").text("Hello!_append").appendTo("#here"); //here 안에 기존내용 뒤에
+		$("<h1></h1>").text("Hello!_prepend").prependTo("#here"); //here 안에 기존내용 앞에
+		$("<h1></h1>").text("Hello!_before").insertBefore("#here"); //here 밖에 here 앞에
+		$("<h1></h1>").text("Hello!_after").insertAfter("#here"); //here 밖에 here 뒤에
 		$("<img>").attr({"src":"../images/bottom-bg.jpg","width":300}).appendTo("#here");
 	}
 </script>

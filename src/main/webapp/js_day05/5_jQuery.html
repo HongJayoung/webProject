@@ -41,7 +41,7 @@
 	
 	function f5() {
 		$("h1").filter(function(index) {
-			if($(this).html()!="jQuery연습5") return true;
+			if($(this).html()=="jQuery연습5") return true;
 			return false;
 		}).css(obj);
 	}
@@ -62,11 +62,13 @@
 		$("h1").eq(-1).css("color","red");
 		$("h1:last").css("background-color","beige");
 		
+		//-붙이면 뒤에서부터
 		$("h1").eq(2).css(obj);
 		$("h1").eq(-2).css(obj);
 	}
 	
 	function f8() {
+		//xml
 		var str = `<friends>
 						<friend>
 						<name>홍길동1</name>
@@ -82,7 +84,7 @@
 					</friend>
 				</friends>
 				`;
-		var obj = $.parseXML(str);
+		var obj = $.parseXML(str); //문자를 XML로 바꾸기
 		//console.log(str);
 		//console.log(obj);
 		
