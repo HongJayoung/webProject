@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+	/*  
+	$("#div1").fadeOut(function() {alert("a");});
+    $("#div2").fadeOut("slow", function() {alert("b");});
+    $("#div3").fadeOut(3000, function() {alert("c");}); 
+    */
+    
+    $("#div1").fadeTo("slow", 0.15); //≈ı∏Ìµµ
+    $("#div2").fadeTo("slow", 0.4);
+    $("#div3").fadeTo("slow", 0.7);
+  });
+});
+</script>
+<style>
+#div1 {
+	width:80px;
+	height:80px;
+	background-color:red;
+}
+
+#div2 {
+	width:80px;
+	height:80px;
+	background-color:green;
+}
+
+#div3 {
+	width:80px;
+	height:80px;
+	background-color:blue;
+}
+</style>
+</head>
+<body>
+
+<p>Demonstrate fadeOut() with different parameters.</p>
+
+<button>Click to fade out boxes</button><br><br>
+
+<div id="div1"></div><br>
+<div id="div2"></div><br>
+<div id="div3"></div>
+
+</body>
+</html>

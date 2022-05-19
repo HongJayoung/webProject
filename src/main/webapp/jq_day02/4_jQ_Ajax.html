@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jq_lib/jquery-3.6.0.min.js"></script>
+<script>
+$(function() {
+	$("#btn1").click(f1);
+	$("#btn2").on("click",f2);
+	$("#btn3").on("click",f3);
+	$("#btn4").on("click",f4);
+	$("#btn5").on("click",f5);
+});
+
+function f1() {
+	var xhr = new XMLHttpRequest();
+	var url = "3_fade.html";
+	xhr.open("get",url,true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState==4 && xhr.status==200) {
+			here.innerHTML = xhr.responseText;
+		}
+	}
+	xhr.send();
+}
+
+function f2() {
+	$("#here").load("3_fade.html");
+}
+
+function f3() {
+	var param = "userid="+$("#userid111").val()+"&userpw="+$("#userpw111").val();
+	
+	$.get("1.jsp?"+param, function(data, status) {
+		$("#here").html(data);
+		$("<h1></h1>").append(status).appendTo("#here");
+	});
+}
+
+function f4() {
+	var paramData = {userid:$("#userid111").val(),userpw:$("#userpw111").val()};
+	
+	$.post("1.jsp",paramData, function(responseData, status) {
+		$("#here").html(responseData);
+		$("<h1></h1>").append(status).appendTo("#here");
+	});
+}
+
+function f5() {
+	var paramData = {userid:$("#userid111").val(),userpw:$("#userpw111").val()};
+	
+	$.ajax({url:"1.jsp",
+			data:paramData,
+			type:"get",
+			success:function(responseData,status,xhr) {
+				$("#here").html(responseData);
+				$("<h1></h1>").append(status).appendTo("#here");
+			},
+			error:function(xhr,status,error) {
+				$("<h1></h1>").append(status).appendTo("#here");
+			}});
+}
+</script>
+</head>
+<body>
+<button id="btn1">javascript Ajax</button>
+<button id="btn2">jQuery Ajax(load)</button>
+<button id="btn3">jQuery Ajax(get)</button>
+<button id="btn4">jQuery Ajax(post)</button>
+<button id="btn5">jQuery Ajax(ajax)</button>
+<hr>
+<input type="text" id="userid111" value="admin">
+<input type="text" id="userpw111" value="1234">
+<hr>
+<div id="here">여기!</div>
+</body>
+</html>
